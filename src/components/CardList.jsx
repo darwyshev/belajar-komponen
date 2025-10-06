@@ -1,3 +1,5 @@
+import Card from "./Card";
+
 export default function CardList() {
   const products = [
     { id: 1, name: "Laptop", price: 8000000 },
@@ -8,10 +10,7 @@ export default function CardList() {
   return (
     <div className="grid grid-cols-3 gap-4">
       {products.map((item) => (
-        <div key={item.id} className="border p-4 rounded-lg shadow">
-          <h2 className="font-bold">{item.name}</h2>
-          <p>Rp {item.price.toLocaleString()}</p>
-        </div>
+        <Card key={item.id} name={item.name} price={item.price} />
       ))}
     </div>
   );
